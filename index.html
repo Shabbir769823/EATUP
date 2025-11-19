@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EATUP – Online Food Delivery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+        <header class="topbar">
+            <div class="logo-area">
+                <div class="logo-circle">EU</div>
+                <div class="logo-text">
+                    <h1>EATUP</h1>
+                    <span>Hungry? We got you.</span>
+                </div>
+            </div>
+            <div class="search-area">
+                <input type="text" id="searchInput" placeholder="Search for pizza, burger, biryani, curry, drinks...">
+            </div>
+            <div class="top-actions">
+                <button class="outline-btn" id="filterBtn">Veg / Non-Veg</button>
+                <button class="cart-icon-btn" id="cartToggleBtn">
+                    <span class="cart-icon">🛒</span>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <div class="user-pill">
+                    <div class="user-avatar">M</div>
+                    <span class="user-name">Hi, Shabbir</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="layout">
+            <section class="main-panel">
+                <div class="hero">
+                    <div class="hero-text">
+                        <h2>Order your favorite food in minutes</h2>
+                        <p>Fresh, hot and delivered super fast at your doorstep. Explore handpicked dishes from top restaurants near you.</p>
+                        <div class="hero-actions">
+                            <button class="primary-btn">Order Now</button>
+                            <button class="ghost-btn">View Offers</button>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <strong>50+</strong>
+                                <span>Popular Dishes</span>
+                            </div>
+                            <div class="stat-card">
+                                <strong>30 min</strong>
+                                <span>Average Delivery</span>
+                            </div>
+                            <div class="stat-card">
+                                <strong>4.8★</strong>
+                                <span>Customer Rating</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <div class="food-glow"></div>
+                        <img src="2.webp" alt="Delicious pizza">
+                        <div class="hero-pill">
+                            <span>🔥 Trending:</span>
+                            <strong>Cheesy Farmhouse Pizza</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-header">
+                    <div>
+                        <h3>Recommended For You</h3>
+                        <p>Based on your last orders and top picks in your area.</p>
+                    </div>
+                    <div class="chips">
+                        <button class="chip active" data-category="all">All</button>
+                        <button class="chip" data-category="pizza">Pizza</button>
+                        <button class="chip" data-category="burger">Burger</button>
+                        <button class="chip" data-category="biryani">Biryani</button>
+                        <button class="chip" data-category="curry">Curries</button>
+                        <button class="chip" data-category="drinks">Drinks</button>
+                        <button class="chip" data-category="dessert">Desserts</button>
+                    </div>
+                </div>
+
+                <div class="food-grid" id="foodGrid">
+                    <article class="food-card" data-name="Cheesy Farmhouse Pizza" data-price="349" data-category="pizza">
+                        <div class="food-image">
+                            <img src="2.webp" alt="Cheesy Farmhouse Pizza">
+                            <span class="pill veg">VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Cheesy Farmhouse Pizza</h4>
+                                <span class="rating">4.8★</span>
+                            </div>
+                            <p>Loaded with cheese, capsicum, onions, and sweet corn on a soft crust.</p>
+                            <div class="food-footer">
+                                <span class="price">₹349</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Chicken Supreme Pizza" data-price="399" data-category="pizza">
+                        <div class="food-image">
+                            <img src="3.jpg" alt="Chicken Supreme Pizza">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Chicken Supreme Pizza</h4>
+                                <span class="rating">4.7★</span>
+                            </div>
+                            <p>Grilled chicken, pepperoni, olives and extra cheese with spicy seasoning.</p>
+                            <div class="food-footer">
+                                <span class="price">₹399</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Double Patty Burger" data-price="229" data-category="burger">
+                        <div class="food-image">
+                            <img src="4.jpeg" alt="Double Patty Burger">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Double Patty Burger</h4>
+                                <span class="rating">4.6★</span>
+                            </div>
+                            <p>Juicy double chicken patty with cheese, lettuce and special sauce.</p>
+                            <div class="food-footer">
+                                <span class="price">₹229</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Crispy Veg Burger" data-price="189" data-category="burger">
+                        <div class="food-image">
+                            <img src="5.webp" alt="Crispy Veg Burger">
+                            <span class="pill veg">VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Crispy Veg Burger</h4>
+                                <span class="rating">4.5★</span>
+                            </div>
+                            <p>Crunchy veg patty, fresh veggies and creamy mayo in a toasted bun.</p>
+                            <div class="food-footer">
+                                <span class="price">₹189</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Hyderabadi Chicken Biryani" data-price="299" data-category="biryani">
+                        <div class="food-image">
+                            <img src="1.jpeg" alt="Hyderabadi Chicken Biryani">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Hyderabadi Chicken Biryani</h4>
+                                <span class="rating">4.9★</span>
+                            </div>
+                            <p>Flavourful long grain rice cooked with tender chicken and rich spices.</p>
+                            <div class="food-footer">
+                                <span class="price">₹299</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Paneer Dum Biryani" data-price="279" data-category="biryani">
+                        <div class="food-image">
+                            <img src="6.jpg" alt="Paneer Dum Biryani">
+                            <span class="pill veg">VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Paneer Dum Biryani</h4>
+                                <span class="rating">4.7★</span>
+                            </div>
+                            <p>Soft paneer cubes, caramelized onions and aromatic masala in basmati rice.</p>
+                            <div class="food-footer">
+                                <span class="price">₹279</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Choco Lava Cake" data-price="149" data-category="dessert">
+                        <div class="food-image">
+                            <img src="7.avif" alt="Choco Lava Cake">
+                            <span class="pill dessert">DESSERT</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Choco Lava Cake</h4>
+                                <span class="rating">4.9★</span>
+                            </div>
+                            <p>Warm chocolate cake with rich molten lava inside, perfect for sweet cravings.</p>
+                            <div class="food-footer">
+                                <span class="price">₹149</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Classic Gulab Jamun" data-price="129" data-category="dessert">
+                        <div class="food-image">
+                            <img src="8.webp" alt="Gulab Jamun">
+                            <span class="pill dessert">DESSERT</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Classic Gulab Jamun</h4>
+                                <span class="rating">4.8★</span>
+                            </div>
+                            <p>Soft and juicy gulab jamuns soaked in sugar syrup with a hint of cardamom.</p>
+                            <div class="food-footer">
+                                <span class="price">₹129</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Mutton Dum Biryani" data-price="329" data-category="biryani">
+                        <div class="food-image">
+                            <img src="9.jpg" alt="Mutton Dum Biryani">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Mutton Dum Biryani</h4>
+                                <span class="rating">4.8★</span>
+                            </div>
+                            <p>Slow-cooked mutton layered with fragrant basmati rice and rich biryani masala.</p>
+                            <div class="food-footer">
+                                <span class="price">₹329</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Egg Biryani" data-price="249" data-category="biryani">
+                        <div class="food-image">
+                            <img src="10.jpg" alt="Egg Biryani">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Egg Biryani</h4>
+                                <span class="rating">4.6★</span>
+                            </div>
+                            <p>Boiled eggs tossed in spicy masala and layered with dum-cooked rice.</p>
+                            <div class="food-footer">
+                                <span class="price">₹249</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Butter Chicken Curry" data-price="289" data-category="curry">
+                        <div class="food-image">
+                            <img src="11.jpg" alt="Butter Chicken Curry">
+                            <span class="pill non-veg">NON-VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Butter Chicken Curry</h4>
+                                <span class="rating">4.9★</span>
+                            </div>
+                            <p>Creamy tomato gravy with tender chicken pieces, perfect with naan or rice.</p>
+                            <div class="food-footer">
+                                <span class="price">₹289</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Paneer Butter Masala" data-price="259" data-category="curry">
+                        <div class="food-image">
+                            <img src="12.webp" alt="Paneer Butter Masala">
+                            <span class="pill veg">VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Paneer Butter Masala</h4>
+                                <span class="rating">4.8★</span>
+                            </div>
+                            <p>Soft paneer cubes cooked in a rich and buttery tomato-based gravy.</p>
+                            <div class="food-footer">
+                                <span class="price">₹259</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Mixed Veg Curry" data-price="219" data-category="curry">
+                        <div class="food-image">
+                            <img src="13.jpg" alt="Mixed Veg Curry">
+                            <span class="pill veg">VEG</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Mixed Veg Curry</h4>
+                                <span class="rating">4.5★</span>
+                            </div>
+                            <p>Seasonal vegetables simmered in a mildly spiced gravy, light and comforting.</p>
+                            <div class="food-footer">
+                                <span class="price">₹219</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Masala Cola" data-price="79" data-category="drinks">
+                        <div class="food-image">
+                            <img src="13.jpg" alt="Masala Cola">
+                            <span class="pill drink">DRINK</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Masala Cola</h4>
+                                <span class="rating">4.4★</span>
+                            </div>
+                            <p>Classic cola with a tangy Indian masala twist, chilled and fizzy.</p>
+                            <div class="food-footer">
+                                <span class="price">₹79</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Fresh Lime Soda" data-price="69" data-category="drinks">
+                        <div class="food-image">
+                            <img src="14.jpeg" alt="Fresh Lime Soda">
+                            <span class="pill drink">DRINK</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Fresh Lime Soda</h4>
+                                <span class="rating">4.6★</span>
+                            </div>
+                            <p>Refreshing lime soda, available sweet or salted, perfect with spicy food.</p>
+                            <div class="food-footer">
+                                <span class="price">₹69</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="food-card" data-name="Mango Lassi" data-price="99" data-category="drinks">
+                        <div class="food-image">
+                            <img src="15.jpg" alt="Mango Lassi">
+                            <span class="pill drink">DRINK</span>
+                        </div>
+                        <div class="food-content">
+                            <div class="food-header">
+                                <h4>Mango Lassi</h4>
+                                <span class="rating">4.7★</span>
+                            </div>
+                            <p>Thick and creamy mango yogurt drink, served chilled.</p>
+                            <div class="food-footer">
+                                <span class="price">₹99</span>
+                                <button class="add-btn">Add to Cart</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <aside class="cart-panel" id="cartPanel">
+                <div class="cart-header">
+                    <div>
+                        <h3>Your Cart</h3>
+                        <p id="cartSubtitle">No items added yet.</p>
+                    </div>
+                    <button class="close-cart-btn" id="closeCartBtn">✕</button>
+                </div>
+
+                <div class="cart-body">
+                    <ul class="cart-items" id="cartItems"></ul>
+                </div>
+
+                <div class="cart-footer">
+                    <div class="price-row">
+                        <span>Subtotal</span>
+                        <span id="subtotalAmount">₹0</span>
+                    </div>
+                    <div class="price-row">
+                        <span>Delivery</span>
+                        <span id="deliveryAmount">₹0</span>
+                    </div>
+                    <div class="price-row total-row">
+                        <span>Total</span>
+                        <span id="totalAmount">₹0</span>
+                    </div>
+                    <button class="primary-btn full-width" id="placeOrderBtn">Place Order</button>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <div class="toast" id="toast">Added to cart</div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
